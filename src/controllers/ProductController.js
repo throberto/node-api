@@ -8,7 +8,9 @@ module.exports = {
 
     return res.json(products);
   },
-  async StorageEvent(req, res) {
-    //
+  async store(req, res) {
+    const product = await Product.create(req.body);
+
+    return res.json(product);
   }
 };
